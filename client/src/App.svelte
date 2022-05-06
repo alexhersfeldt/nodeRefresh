@@ -1,12 +1,14 @@
 <script>
 	export let name;
 	import Home from "./pages/home.svelte";
+
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<Home></Home>
+
 </main>
 
 <style>

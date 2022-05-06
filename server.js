@@ -1,12 +1,11 @@
 const express  = require("express");
 const app = express();
 const mongoose = require("mongoose");
-require("dotenv").config()
 const passport = require("passport")
 const session = require("express-session")
 const MongoStore = require ("connect-mongo")
 const User = require("./models/User")
-
+require("dotenv").config()
 
 app.use(express.static(__dirname +"/client/public"));
 
@@ -20,7 +19,7 @@ app.use(
     session({
         resave:true,
         saveUninitialized:true,
-        secret:"peri is a good boy",
+        secret:"FCK for the win",
         store: MongoStore.create({mongoUrl: process.env.DATABASE_URL})
     })
 )
