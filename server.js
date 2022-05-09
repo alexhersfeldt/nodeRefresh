@@ -33,10 +33,11 @@ app.use(passport.session())
 
 app.use(express.json())
 
-const usersRouter = require("./routes/users.js");
-app.use("/users", usersRouter)
 const authRouter = require("./routes/auth.js");
-app.use("/auth", authRouter)
+app.use("/api", authRouter)
+const mailRouter = require("./routes/mail.js");
+app.use("/mail", mailRouter)
+
 
 app.listen(3000, () => {
     console.log("Server started on port 3000");

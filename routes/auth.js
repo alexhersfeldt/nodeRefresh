@@ -4,6 +4,12 @@ const User = require('../models/User')
 
 const router = Router();
 
+function ensureLogin(req, res, next) {
+    if(!req.isAuthenticated) {
+        return res.status(401).json({message: "Not Logged in"})
+    }
+}
+
 router.get('/user', (req, res) => {
     if (req.user) {
         res.json(extractUser(req))
